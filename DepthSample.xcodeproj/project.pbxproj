@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD15977E1EEF79980027B768 /* DepthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD15977D1EEF79980027B768 /* DepthViewController.swift */; };
 		AD1645711EEF690F00018421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1645701EEF690F00018421 /* AppDelegate.swift */; };
 		AD1645731EEF690F00018421 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1645721EEF690F00018421 /* ViewController.swift */; };
 		AD1645761EEF690F00018421 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1645741EEF690F00018421 /* Main.storyboard */; };
@@ -14,6 +15,8 @@
 		AD16457B1EEF690F00018421 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1645791EEF690F00018421 /* LaunchScreen.storyboard */; };
 		AD1645861EEF690F00018421 /* DepthSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1645851EEF690F00018421 /* DepthSampleTests.swift */; };
 		AD1645911EEF690F00018421 /* DepthSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1645901EEF690F00018421 /* DepthSampleUITests.swift */; };
+		AD448B021EF5546800891411 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD448B011EF5546800891411 /* UIColorExtension.swift */; };
+		AD448B041EF55E6800891411 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD448B031EF55E6800891411 /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD15977D1EEF79980027B768 /* DepthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthViewController.swift; sourceTree = "<group>"; };
 		AD16456D1EEF690F00018421 /* DepthSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DepthSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1645701EEF690F00018421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD1645721EEF690F00018421 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,10 @@
 		AD16458C1EEF690F00018421 /* DepthSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DepthSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1645901EEF690F00018421 /* DepthSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthSampleUITests.swift; sourceTree = "<group>"; };
 		AD1645921EEF690F00018421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD16459F1EEF69FE00018421 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		AD1645A01EEF69FE00018421 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		AD448B011EF5546800891411 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		AD448B031EF55E6800891411 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 				AD1645841EEF690F00018421 /* DepthSampleTests */,
 				AD16458F1EEF690F00018421 /* DepthSampleUITests */,
 				AD16456E1EEF690F00018421 /* Products */,
+				AD16459E1EEF69FE00018421 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +106,14 @@
 		AD16456F1EEF690F00018421 /* DepthSample */ = {
 			isa = PBXGroup;
 			children = (
+				AD448B001EF54DDE00891411 /* Extension */,
 				AD1645701EEF690F00018421 /* AppDelegate.swift */,
 				AD1645721EEF690F00018421 /* ViewController.swift */,
 				AD1645741EEF690F00018421 /* Main.storyboard */,
 				AD1645771EEF690F00018421 /* Assets.xcassets */,
 				AD1645791EEF690F00018421 /* LaunchScreen.storyboard */,
 				AD16457C1EEF690F00018421 /* Info.plist */,
+				AD15977D1EEF79980027B768 /* DepthViewController.swift */,
 			);
 			path = DepthSample;
 			sourceTree = "<group>";
@@ -123,6 +134,24 @@
 				AD1645921EEF690F00018421 /* Info.plist */,
 			);
 			path = DepthSampleUITests;
+			sourceTree = "<group>";
+		};
+		AD16459E1EEF69FE00018421 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD1645A01EEF69FE00018421 /* Photos.framework */,
+				AD16459F1EEF69FE00018421 /* PhotosUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD448B001EF54DDE00891411 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AD448B011EF5546800891411 /* UIColorExtension.swift */,
+				AD448B031EF55E6800891411 /* UIImageExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD15977E1EEF79980027B768 /* DepthViewController.swift in Sources */,
 				AD1645731EEF690F00018421 /* ViewController.swift in Sources */,
 				AD1645711EEF690F00018421 /* AppDelegate.swift in Sources */,
+				AD448B041EF55E6800891411 /* UIImageExtension.swift in Sources */,
+				AD448B021EF5546800891411 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +556,7 @@
 				AD1645971EEF690F00018421 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD1645981EEF690F00018421 /* Build configuration list for PBXNativeTarget "DepthSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +565,7 @@
 				AD16459A1EEF690F00018421 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD16459B1EEF690F00018421 /* Build configuration list for PBXNativeTarget "DepthSampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +574,7 @@
 				AD16459D1EEF690F00018421 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
