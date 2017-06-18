@@ -17,6 +17,7 @@
 		AD1645911EEF690F00018421 /* DepthSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1645901EEF690F00018421 /* DepthSampleUITests.swift */; };
 		AD448B021EF5546800891411 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD448B011EF5546800891411 /* UIColorExtension.swift */; };
 		AD448B041EF55E6800891411 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD448B031EF55E6800891411 /* UIImageExtension.swift */; };
+		AD637D9D1EF64B9F00CCD762 /* ModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD637D9C1EF64B9F00CCD762 /* ModeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		AD1645A01EEF69FE00018421 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		AD448B011EF5546800891411 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		AD448B031EF55E6800891411 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		AD637D9C1EF64B9F00CCD762 /* ModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +111,12 @@
 				AD448B001EF54DDE00891411 /* Extension */,
 				AD1645701EEF690F00018421 /* AppDelegate.swift */,
 				AD1645721EEF690F00018421 /* ViewController.swift */,
+				AD15977D1EEF79980027B768 /* DepthViewController.swift */,
+				AD637D9C1EF64B9F00CCD762 /* ModeViewController.swift */,
 				AD1645741EEF690F00018421 /* Main.storyboard */,
 				AD1645771EEF690F00018421 /* Assets.xcassets */,
 				AD1645791EEF690F00018421 /* LaunchScreen.storyboard */,
 				AD16457C1EEF690F00018421 /* Info.plist */,
-				AD15977D1EEF79980027B768 /* DepthViewController.swift */,
 			);
 			path = DepthSample;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD15977E1EEF79980027B768 /* DepthViewController.swift in Sources */,
+				AD637D9D1EF64B9F00CCD762 /* ModeViewController.swift in Sources */,
 				AD1645731EEF690F00018421 /* ViewController.swift in Sources */,
 				AD1645711EEF690F00018421 /* AppDelegate.swift in Sources */,
 				AD448B041EF55E6800891411 /* UIImageExtension.swift in Sources */,
