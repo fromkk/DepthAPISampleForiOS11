@@ -137,21 +137,13 @@ extension DepthViewController {
         DispatchQueue.main.async {
             guard let image: UIImage = self.baseImageView.image?.resizedImage(with: disparityUIImage.size),
                 let ciImage: CIImage = CIImage(image: image) else {
-                    print(#function, "image cannot load")
                     return
             }
-            guard let colorImage: UIImage = UIColor.red.toImage(with: disparityUIImage.size) else {
-                print(#function, "colorImage create failed")
-                return
-            }
-            
-            guard let colorCIImage: CIImage = CIImage(image: colorImage) else {
-                print(#function, "colorImage cannot load")
-                return
-            }
+            guard let wallImage: UIImage = #imageLiteral(resourceName: "wall").resizedImage(with: disparityUIImage.size) else { return }
+            guard let wallCIImage: CIImage = CIImage(image: wallImage) else { return }
             
             let maskedImage: CIImage = ciImage.applyingFilter("CIBlendWithMask", withInputParameters: [
-                kCIInputBackgroundImageKey: colorCIImage,
+                kCIInputBackgroundImageKey: wallCIImage,
                 kCIInputMaskImageKey: disparityImage.applyingFilter("CIColorClamp", withInputParameters: nil),
                 ])
             self.disparityImageView.image = UIImage(ciImage: maskedImage)
