@@ -13,12 +13,15 @@ import ImageIO
 class DepthViewController: UIViewController {
     
     enum Mode {
+        case `default`
         case disparity
         case chromakey
         case log
         
         var toString: String {
             switch self {
+            case .default:
+                return "Default"
             case .disparity:
                 return "Disparity"
             case .chromakey:
@@ -33,6 +36,8 @@ class DepthViewController: UIViewController {
             guard let mode: Mode = self.mode else { return }
             
             switch mode {
+            case .default:
+                self.disparityImageView.image = nil
             case .disparity:
                 self.loadDisparityImage()
             case .chromakey:
