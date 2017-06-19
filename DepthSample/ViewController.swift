@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         collectionView.register(Cell.self, forCellWithReuseIdentifier: Cell.reuseIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = .white
         return collectionView
     }()
     
@@ -130,7 +131,6 @@ extension ViewController: UICollectionViewDelegate {
         guard let asset: PHAsset = self.fetchResult?.object(at: indexPath.row) else {
             return
         }
-        dump(asset)
         
         guard let cell: Cell = cell as? Cell else { return }
         
@@ -151,7 +151,7 @@ extension ViewController: UICollectionViewDelegate {
             return
         }
         
-        let depthViewController: DepthViewController = DepthViewController(nibName: nil, bundle: nil)
+        let depthViewController: DepthViewController = DepthViewController()
         depthViewController.asset = asset
         self.navigationController?.pushViewController(depthViewController, animated: true)
     }

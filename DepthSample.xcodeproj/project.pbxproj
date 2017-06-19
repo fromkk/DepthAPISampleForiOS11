@@ -57,6 +57,7 @@
 		AD1645A01EEF69FE00018421 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		AD376E3E1EF76538004730FE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		AD376E3F1EF7660D004730FE /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		AD376E411EF76C7B004730FE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AD448B011EF5546800891411 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		AD448B031EF55E6800891411 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		AD637D9C1EF64B9F00CCD762 /* ModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 		AD1645641EEF690F00018421 = {
 			isa = PBXGroup;
 			children = (
+				AD376E411EF76C7B004730FE /* README.md */,
 				AD16456F1EEF690F00018421 /* DepthSample */,
 				AD1645841EEF690F00018421 /* DepthSampleTests */,
 				AD16458F1EEF690F00018421 /* DepthSampleUITests */,
