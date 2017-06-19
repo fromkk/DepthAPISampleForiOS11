@@ -15,6 +15,7 @@
 		AD16457B1EEF690F00018421 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1645791EEF690F00018421 /* LaunchScreen.storyboard */; };
 		AD1645861EEF690F00018421 /* DepthSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1645851EEF690F00018421 /* DepthSampleTests.swift */; };
 		AD1645911EEF690F00018421 /* DepthSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1645901EEF690F00018421 /* DepthSampleUITests.swift */; };
+		AD376E401EF7660D004730FE /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD376E3F1EF7660D004730FE /* LogViewController.swift */; };
 		AD448B021EF5546800891411 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD448B011EF5546800891411 /* UIColorExtension.swift */; };
 		AD448B041EF55E6800891411 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD448B031EF55E6800891411 /* UIImageExtension.swift */; };
 		AD637D9D1EF64B9F00CCD762 /* ModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD637D9C1EF64B9F00CCD762 /* ModeViewController.swift */; };
@@ -54,6 +55,8 @@
 		AD1645921EEF690F00018421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD16459F1EEF69FE00018421 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		AD1645A01EEF69FE00018421 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		AD376E3E1EF76538004730FE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		AD376E3F1EF7660D004730FE /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		AD448B011EF5546800891411 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		AD448B031EF55E6800891411 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		AD637D9C1EF64B9F00CCD762 /* ModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +116,7 @@
 				AD1645721EEF690F00018421 /* ViewController.swift */,
 				AD15977D1EEF79980027B768 /* DepthViewController.swift */,
 				AD637D9C1EF64B9F00CCD762 /* ModeViewController.swift */,
+				AD376E3F1EF7660D004730FE /* LogViewController.swift */,
 				AD1645741EEF690F00018421 /* Main.storyboard */,
 				AD1645771EEF690F00018421 /* Assets.xcassets */,
 				AD1645791EEF690F00018421 /* LaunchScreen.storyboard */,
@@ -142,6 +146,7 @@
 		AD16459E1EEF69FE00018421 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD376E3E1EF76538004730FE /* ImageIO.framework */,
 				AD1645A01EEF69FE00018421 /* Photos.framework */,
 				AD16459F1EEF69FE00018421 /* PhotosUI.framework */,
 			);
@@ -293,6 +298,7 @@
 				AD1645731EEF690F00018421 /* ViewController.swift in Sources */,
 				AD1645711EEF690F00018421 /* AppDelegate.swift in Sources */,
 				AD448B041EF55E6800891411 /* UIImageExtension.swift in Sources */,
+				AD376E401EF7660D004730FE /* LogViewController.swift in Sources */,
 				AD448B021EF5546800891411 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

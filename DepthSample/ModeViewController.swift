@@ -15,7 +15,7 @@ class ModeViewController: UIViewController {
         self._modeSelected = modeSelected
     }
     
-    let modes: [DepthViewController.Mode] = [.disparity, .chromakey]
+    let modes: [DepthViewController.Mode] = [.disparity, .chromakey, .log]
     
     lazy var tableView: UITableView = { () -> UITableView in
         let tableView: UITableView = UITableView(frame: .zero, style: .plain)

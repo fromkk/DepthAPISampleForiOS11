@@ -8,12 +8,14 @@
 
 import UIKit
 import Photos
+import ImageIO
 
 class DepthViewController: UIViewController {
     
     enum Mode {
         case disparity
         case chromakey
+        case log
         
         var toString: String {
             switch self {
@@ -21,6 +23,8 @@ class DepthViewController: UIViewController {
                 return "Disparity"
             case .chromakey:
                 return "Chroma key"
+            case .log:
+                return "Log"
             }
         }
     }
@@ -33,6 +37,8 @@ class DepthViewController: UIViewController {
                 self.loadDisparityImage()
             case .chromakey:
                 self.loadDisparityWithChromakey()
+            case .log:
+                self.logDisparity()
             }
         }
     }
@@ -93,6 +99,20 @@ class DepthViewController: UIViewController {
 }
 
 extension DepthViewController {
+    fileprivate func logDisparity() {
+        self.asset.requestContentEditingInput(with: nil) { (input, info) in
+            guard let imageURL: URL = input?.fullSizeImageURL else { return }
+            
+            guard let source = CGImageSourceCreateWithURL(imageURL as CFURL, nil) else { return }
+            guard let sourceProperties = CGImageSourceCopyProperties(source, nil) else { return }
+            
+            let logViewController: LogViewController = LogViewController()
+            logViewController.log = "\(sourceProperties)"
+            let navigationController: UINavigationController = UINavigationController(rootViewController: logViewController)
+            self.present(navigationController, animated: true, completion: nil)
+        }
+    }
+    
     fileprivate func loadBaseImage() {
         let options: PHImageRequestOptions = PHImageRequestOptions()
         options.isNetworkAccessAllowed = true
@@ -107,9 +127,7 @@ extension DepthViewController {
     
     fileprivate func loadDisparityImage() {
         self.asset.requestContentEditingInput(with: nil) { (input, info) in
-            guard let imageURL: URL = input?.fullSizeImageURL else {
-                return
-            }
+            guard let imageURL: URL = input?.fullSizeImageURL else { return }
             
             if let disparityImage: CIImage = CIImage(contentsOf: imageURL, options: [kCIImageAuxiliaryDisparity: true]) {
                 DispatchQueue.main.async {
