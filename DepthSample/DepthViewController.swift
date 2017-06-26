@@ -16,6 +16,7 @@ class DepthViewController: UIViewController {
         case `default`
         case disparity
         case chromakey
+        case contrast
         case log
         
         var toString: String {
@@ -26,6 +27,8 @@ class DepthViewController: UIViewController {
                 return "Disparity"
             case .chromakey:
                 return "Chroma key"
+            case .contrast:
+                return "Contrast"
             case .log:
                 return "Log"
             }
@@ -39,9 +42,11 @@ class DepthViewController: UIViewController {
             case .default:
                 self.disparityImageView.image = nil
             case .disparity:
-                self.loadDisparityImage()
+                self.showDisparityImage()
             case .chromakey:
                 self.loadDisparityWithChromakey()
+            case .contrast:
+                self.showContrastViewController()
             case .log:
                 self.logDisparity()
             }
@@ -49,6 +54,9 @@ class DepthViewController: UIViewController {
     }
     
     var asset: PHAsset!
+    
+    var baseDisparityImage: CIImage?
+    var filteredDisparityImage: CIImage?
     
     private lazy var imageManager: PHImageManager = PHImageManager()
     private lazy var menuButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(self.handle(menuButton:)))
@@ -90,6 +98,7 @@ class DepthViewController: UIViewController {
             ])
         
         self.loadBaseImage()
+        self.loadDisparityImage()
     }
     
     @objc private func handle(menuButton: UIBarButtonItem) {
@@ -135,22 +144,23 @@ extension DepthViewController {
             guard let imageURL: URL = input?.fullSizeImageURL else { return }
             
             if let disparityImage: CIImage = CIImage(contentsOf: imageURL, options: [kCIImageAuxiliaryDisparity: true]) {
-                DispatchQueue.main.async {
-                    self.disparityImageView.image = UIImage(ciImage: disparityImage)
-                }
+                self.baseDisparityImage = disparityImage
+                self.filteredDisparityImage = disparityImage
             }
         }
     }
     
+    fileprivate func showDisparityImage() {
+        if let disparityImage: CIImage = self.filteredDisparityImage {
+            self.disparityImageView.image = UIImage(ciImage: disparityImage)
+        } else {
+            self.disparityImageView.image = nil
+        }
+    }
+    
     fileprivate func loadDisparityWithChromakey() {
-        self.asset.requestContentEditingInput(with: nil) { (input, info) in
-            guard let imageURL: URL = input?.fullSizeImageURL else {
-                return
-            }
-            
-            if let disparityImage: CIImage = CIImage(contentsOf: imageURL, options: [kCIImageAuxiliaryDisparity: true]) {
-                self.handleDisparity(with: disparityImage)
-            }
+        if let disparityImage: CIImage = self.filteredDisparityImage {
+            self.handleDisparity(with: disparityImage)
         }
     }
     
@@ -171,5 +181,23 @@ extension DepthViewController {
                 ])
             self.disparityImageView.image = UIImage(ciImage: maskedImage)
         }
+    }
+    
+    fileprivate func showContrastViewController() {
+        guard let disparityImage: CIImage = self.baseDisparityImage else { return }
+        
+        let contrastViewController: ContrastViewController = ContrastViewController()
+        contrastViewController.baseDisparityImage = disparityImage
+        contrastViewController.delegate = self
+        
+        let navigationController: UINavigationController = UINavigationController(rootViewController: contrastViewController)
+        self.present(navigationController, animated: true, completion: nil)
+    }
+}
+
+extension DepthViewController: ContrastViewControllerDelegate {
+    func contrastVC(_ viewController: ContrastViewController, didFiltered filteredImage: CIImage) {
+        self.filteredDisparityImage = filteredImage
+        self.disparityImageView.image = nil
     }
 }

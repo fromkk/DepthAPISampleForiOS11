@@ -18,6 +18,7 @@
 		AD376E401EF7660D004730FE /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD376E3F1EF7660D004730FE /* LogViewController.swift */; };
 		AD448B021EF5546800891411 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD448B011EF5546800891411 /* UIColorExtension.swift */; };
 		AD448B041EF55E6800891411 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD448B031EF55E6800891411 /* UIImageExtension.swift */; };
+		AD4722031F0098CC00E65AF9 /* ContrastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4722021F0098CC00E65AF9 /* ContrastViewController.swift */; };
 		AD637D9D1EF64B9F00CCD762 /* ModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD637D9C1EF64B9F00CCD762 /* ModeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		AD376E411EF76C7B004730FE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AD448B011EF5546800891411 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		AD448B031EF55E6800891411 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		AD4722021F0098CC00E65AF9 /* ContrastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContrastViewController.swift; sourceTree = "<group>"; };
 		AD637D9C1EF64B9F00CCD762 /* ModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 				AD1645771EEF690F00018421 /* Assets.xcassets */,
 				AD1645791EEF690F00018421 /* LaunchScreen.storyboard */,
 				AD16457C1EEF690F00018421 /* Info.plist */,
+				AD4722021F0098CC00E65AF9 /* ContrastViewController.swift */,
 			);
 			path = DepthSample;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				AD637D9D1EF64B9F00CCD762 /* ModeViewController.swift in Sources */,
 				AD1645731EEF690F00018421 /* ViewController.swift in Sources */,
 				AD1645711EEF690F00018421 /* AppDelegate.swift in Sources */,
+				AD4722031F0098CC00E65AF9 /* ContrastViewController.swift in Sources */,
 				AD448B041EF55E6800891411 /* UIImageExtension.swift in Sources */,
 				AD376E401EF7660D004730FE /* LogViewController.swift in Sources */,
 				AD448B021EF5546800891411 /* UIColorExtension.swift in Sources */,

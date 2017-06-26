@@ -15,7 +15,7 @@ class ModeViewController: UIViewController {
         self._modeSelected = modeSelected
     }
     
-    let modes: [DepthViewController.Mode] = [.default, .disparity, .chromakey, .log]
+    let modes: [DepthViewController.Mode] = [.default, .disparity, .chromakey, .contrast, .log]
     
     lazy var tableView: UITableView = { () -> UITableView in
         let tableView: UITableView = UITableView(frame: .zero, style: .plain)
@@ -105,8 +105,8 @@ extension ModeViewController: UITableViewDataSource {
 
 extension ModeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self._modeSelected?(self.modes[indexPath.row])
-        
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            self._modeSelected?(self.modes[indexPath.row])
+        }
     }
 }
