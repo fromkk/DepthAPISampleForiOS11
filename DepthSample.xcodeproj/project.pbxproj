@@ -119,13 +119,13 @@
 				AD1645701EEF690F00018421 /* AppDelegate.swift */,
 				AD1645721EEF690F00018421 /* ViewController.swift */,
 				AD15977D1EEF79980027B768 /* DepthViewController.swift */,
+				AD4722021F0098CC00E65AF9 /* ContrastViewController.swift */,
 				AD637D9C1EF64B9F00CCD762 /* ModeViewController.swift */,
 				AD376E3F1EF7660D004730FE /* LogViewController.swift */,
 				AD1645741EEF690F00018421 /* Main.storyboard */,
 				AD1645771EEF690F00018421 /* Assets.xcassets */,
 				AD1645791EEF690F00018421 /* LaunchScreen.storyboard */,
 				AD16457C1EEF690F00018421 /* Info.plist */,
-				AD4722021F0098CC00E65AF9 /* ContrastViewController.swift */,
 			);
 			path = DepthSample;
 			sourceTree = "<group>";

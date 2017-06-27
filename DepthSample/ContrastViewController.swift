@@ -77,12 +77,11 @@ extension ContrastViewController {
     
     private func resultImage(with slider: UISlider) -> CIImage {
         let bias: CGFloat = -0.1
-        let mask = self.baseDisparityImage.applyingFilter("CIColorMatrix", withInputParameters: [
+        return self.baseDisparityImage.applyingFilter("CIColorMatrix", withInputParameters: [
             "inputRVector" : CIVector(x: CGFloat(slider.value), y: 0, z: 0, w: 0),
             "inputGVector" : CIVector(x: 0, y: CGFloat(slider.value), z: 0, w: 0),
             "inputBVector" : CIVector(x: 0, y: 0, z: CGFloat(slider.value), w: 0),
             "inputBiasVector" : CIVector(x: bias, y: bias, z: bias, w: 0)])
-        return mask.applyingFilter("CIColorClamp", withInputParameters: nil)
     }
     
     @objc fileprivate func onTap(doneButton: UIBarButtonItem) {
